@@ -1,8 +1,7 @@
 
 const express = require('express')
-app.use(express.bodyParser())
-app.use(express.json());
 const app = express()
+app.use(express.json());
 const port = process.env.PORT || 4000
 
 const { users } = require('./state')
@@ -16,6 +15,6 @@ const { users } = require('./state')
 // from users array
 app.get('/users/1', (req, res) => {
   res.json(users[0]);
-
+})
 app.listen(port, () => 
   console.log(`Example app listening on port ${port}!`))
